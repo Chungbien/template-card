@@ -1,0 +1,26 @@
+$fontSize: 1rem;
+$fontWeight: 500;
+$colorDefault: #208EF0;
+$colorBlack: #000000;
+$colorWhite: #ffffff;
+$bglinear: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+@mixin dFlex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  background: $bglinear;
+  @include dFlex();
+}
+.card {
+  height: 100vh;
+  width: calc(100vw/3);
+  @include dFlex();
+  background: {
+    color: white;
+  }
+  &__background {
+    width: 100%;
+  }
+}
