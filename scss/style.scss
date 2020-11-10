@@ -1,26 +1,85 @@
 $fontSize: 1rem;
 $fontWeight: 500;
-$colorDefault: #208EF0;
+$colorDefault: #208ef0;
 $colorBlack: #000000;
 $colorWhite: #ffffff;
-$bglinear: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+$bglinear: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+
+@mixin boderRadius($value: 5px, $exptionRadius: ()) {
+  border-radius: $value;
+  @each $var in $exptionRadius {
+    border-#{$var}-radius: 0;
+  }
+}
 @mixin dFlex() {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+@mixin spaceSection($padding: 1rem, $margin: 1rem) {
+  padding: $padding 0;
+  margin: 0 $margin;
+}
+* {
+  box-sizing: border-box;
+}
 body {
   background: $bglinear;
   @include dFlex();
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
 }
 .card {
-  height: 100vh;
-  width: calc(100vw/3);
-  @include dFlex();
+  height: 85vh;
+  width: calc(100vw / 3);
+  @include boderRadius(10px);
   background: {
     color: white;
   }
-  &__background {
+  &__img img {
+    @include boderRadius(10px, (bottom-left, bottom-right));
+    width: 100%;
+    height: auto;
+  }
+  &__content,
+  &__title,
+  &-subtitle,
+  &__form {
+    @include spaceSection();
+  }
+  &__title {
+    border-bottom: 1px solid black;
+    text-align: center;
+    font: {
+      weight: bold;
+      size: 2rem;
+    }
+  }
+  &-subtitle {
+    @include dFlex();
+    justify-content: space-around;
+    flex-wrap: wrap;
+    &__item {
+      display: flex;
+      flex-wrap: nowrap;
+      width: 40%;
+      font-size: 1.5rem;
+    }
+    &__item .item {
+      &__icon {
+        margin-right: 0.5rem;
+        color: $colorDefault;
+      }
+    }
+  }
+  &__content {
+    @include spaceSection(0.5rem, 1rem);
+  }
+  &__form input {
+    @include boderRadius(5px);
+    height: 2rem;
     width: 100%;
   }
 }
