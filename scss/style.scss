@@ -82,6 +82,13 @@ body {
       size: 2rem;
     }
   }
+  &__title.title-select{
+    @include spaceSection(0rem, 1rem);
+    font: {
+      weight: 100;
+      size: 2rem;
+    }
+  }
   &-subtitle {
     @include dFlex();
     justify-content: space-around;
@@ -101,6 +108,21 @@ body {
   }
   &__content {
     @include spaceSection(0.5rem, 1rem);
+    @include dFlex();
+    justify-content: space-between;
+    flex-wrap: wrap;
+    & .content__item {
+      @include hoverReverColor($colorWhite, $colorDefault);
+      color: $colorDefault;
+      margin: 0.5rem;
+      border: 1px solid $colorDefault;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      cursor: pointer;
+    }
   }
   &__form {
     @include boderRadius(0px);
@@ -156,6 +178,10 @@ body {
       color: $colorWhite;
       border-radius: 10px;
       background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+    }
+    &.card-action__select {
+      @include spaceSection(0rem, 1rem);
+      justify-content: center;
     }
   }
 }

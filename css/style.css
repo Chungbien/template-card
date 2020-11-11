@@ -37,6 +37,11 @@ body {
     text-align: center;
     font-weight: bold;
     font-size: 2rem; }
+  .card__title.title-select {
+    padding: 0rem 0;
+    margin: 0 1rem;
+    font-weight: 100;
+    font-size: 2rem; }
   .card-subtitle {
     display: flex;
     justify-content: center;
@@ -53,7 +58,27 @@ body {
       color: #208ef0; }
   .card__content {
     padding: 0.5rem 0;
-    margin: 0 1rem; }
+    margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+    .card__content .content__item {
+      color: #208ef0;
+      margin: 0.5rem;
+      border: 1px solid #208ef0;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      cursor: pointer; }
+      .card__content .content__item:hover {
+        color: #ffffff;
+        border: 1px solid #ffffff;
+        background: none;
+        background-color: #208ef0; }
   .card__form {
     border-radius: 0px;
     font-size: 16px; }
@@ -123,3 +148,7 @@ body {
         border: 1px solid #fe6b8b;
         background: none;
         background-color: #ffffff; }
+    .card-action.card-action__select {
+      padding: 0rem 0;
+      margin: 0 1rem;
+      justify-content: center; }
